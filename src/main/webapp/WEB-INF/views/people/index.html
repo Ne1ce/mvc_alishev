@@ -5,14 +5,16 @@
   <title>Index</title>
 </head>
 <body>
-
+<!--список пользователей в ввиде ссылок-->
 <div th:each="person : ${people}">
-  <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName()}">user</a>
+  <a th:href="@{/people/{id}(id=${person.getId()})}"
+     th:text="${person.getName() + ', ' + person.getAge()}">user</a>
 </div>
-
+<!--отступ-->
 <br/>
+<!--линия визуально отделяющая от списка пользователей-->
 <hr/>
-
+<!--кнопка на странице пользователей для создания пользователя-->
 <a href="/people/new">Create new person</a>
 
 </body>
